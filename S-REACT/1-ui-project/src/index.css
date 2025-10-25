@@ -1,0 +1,93 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  
+}
+body{
+ background-color: rgb(40, 38, 38); 
+}
+.parent{
+  display: flex;
+  flex-wrap: wrap;
+}
+.card{
+  height: 300px;
+  width: 200px;
+   background-color: rgb(230, 238, 238);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  
+
+}
+.head{
+         display: flex;
+         justify-content: space-between;
+         margin-bottom: 50px;
+}
+.card img{
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+ 
+}
+.icon{
+  padding: 10px;
+}
+.middle{
+  padding-left: 20px;
+  margin-bottom: 30px;
+  
+}
+.Amazon{
+  font-size: 30px;
+  font-weight: 900;
+}
+.days{
+  font-size: 10px;
+  font-weight: 500;
+  color: rgb(132, 132, 130);
+}
+.designer{
+  font-size: 20px;
+  font-weight: 900;
+}
+.partTime{
+  margin-top: 10px;
+  font-size: 12px;
+ 
+
+}
+.partTime span{
+
+  margin: 5px;
+  background-color: #838282;
+}
+.line{
+  height: 1px;
+  width:100% ;
+  background-color: #b0a6a6;
+  margin: 0px;
+  padding: 0px;
+}
+.footer{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.money{
+  font-weight: 900;
+  font-size: 17px;
+}
+.address{
+  font-size: 12px;
+  color: #838282;
+}
+.apply{
+  background-color: rgb(13, 12, 12);
+  color: white;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding-top: 2px;
+  font-weight: 400;
+}
