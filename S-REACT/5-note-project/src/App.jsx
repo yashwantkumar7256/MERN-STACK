@@ -10,7 +10,7 @@ const App = () => {
     dello
    <Form/>
       </div>
-      </div>
+      </div> 
     </>
   )
 }

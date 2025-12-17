@@ -16,7 +16,7 @@ const Form = () => {
     console.log(copyTask)
     Setdetail(' ')
     Settital(' ')
-
+ 
     
 
   }

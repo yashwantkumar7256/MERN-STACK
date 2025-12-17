@@ -9,7 +9,7 @@ const Notes = (props) => {
     <div className=' h-10 w-10 rounded-2xl m-5 bg-white '> 
     </div>
     </div>
-
+ 
     </>
   )
 }

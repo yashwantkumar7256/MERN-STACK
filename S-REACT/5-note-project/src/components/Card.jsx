@@ -11,7 +11,7 @@ const Card = () => {
         copyTask.push({tital,dis})
         Settask(copyTask)
          console.log(copyTask)
-      
+       
 
         SetTital(' ')
         SetDis(' ')
