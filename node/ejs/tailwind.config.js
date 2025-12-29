@@ -1,6 +1,6 @@
 export default {
   content: [
-    "./views/**/*.ejs",
+    "./views/**/*.{html,ejs}",
     "./public/**/*.js"
   ],
   theme: {
