@@ -3,18 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/output.css">
+    <link rel="stylesheet" href="/styles/output.css">
     <title>home</title>
    
 
 </head>
 <body>
+
      <h1 class="text-red-600">welcome to my home</h1>
+      
     <a href="/host/add-home">go to   home</a>
-   <% homes.forEach(home => { %>
+    <!-- <% homes.forEach(home => { %>
   <h1 class="text-2xl font-bold text-blue-600">
     <%= home.houseName %>
   </h1>
-<% }); %>
+<% }); %><% if (homes && homes.length > 0) { %>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6"> -->
+    
+    <% homes.forEach(home => { %>
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition">
+
+        <!-- Image -->
+        <img 
+          src="<%= home.photourl %>" 
+          alt="House Image"
+          class="w-full h-48 object-cover"
+        />
+
+        <!-- Content -->
+        <div class="p-4">
+          <h2 class="text-xl font-bold text-gray-800 mb-2">
+            <%= home.houseName %>
+          </h2>
+
+          <p class="text-gray-600 mb-1">
+            📍 <%= home.location %>
+          </p>
+
+          <p class="text-gray-700 font-semibold mb-1">
+            💰 ₹ <%= home.price %> /night
+          </p>
+
+          <p class="text-yellow-500 font-medium">
+            ⭐ Rating: <%= home.rating %>/5
+          </p>
+        </div>
+
+      </div>
+    <% }) %>
+
+  </div>
+<% } else { %>
+  <p class="text-center text-gray-500 mt-10">No homes available</p>
+<% } %>
+
+
+   
+<!-- <% if (homes && homes.length > 0) { %>
+  <% homes.forEach(home => { %>
+    <h1 class="text-2xl font-bold text-blue-600">
+      <%= home.houseName %>
+    </h1>
+  <% }) %>
+<% } else { %>
+  <p>No homes found</p>
+<% } %> -->
+
+
+
 </body>
 </html>

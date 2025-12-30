@@ -1,7 +1,7 @@
-const{registeredHomes}=require('./hostCont');
+const Home=require('./../models/Home');
 
 exports.getHome=(req , res, next)=>{
-    console.log(registeredHomes);
-   res.render('index',{homes:registeredHomes});
-
+    let registeredHomes=Home.fetchAll();
+  
+   res.render('index',{homes:registeredHomes,pageTitale:'home'})
 };

@@ -2,9 +2,10 @@
 
 const path =require('path');
 const rootDir = require('../util/path-util');
+const Home=require('./../models/Home');
 
 
-const registeredHomes=[];
+
 
 
 exports.getAddHome=((req,res, next) =>{
@@ -12,10 +13,13 @@ exports.getAddHome=((req,res, next) =>{
 });
 
 exports.postAddHome=((req,res, next)=>{
-     
-       registeredHomes.push(req.body);
+      const  {houseName,price,location,rating,photoUrl}=req.body;
+      const newHome= new Home(houseName,price,location,rating,photoUrl);
+      newHome.save();
+
+       
   res.render("home-added", {pageTitle: 'Home Hosted'});
 });
 
-exports.registeredHomes=registeredHomes;
+
 
