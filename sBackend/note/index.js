@@ -12,10 +12,20 @@ app.use(express.static(path.join(__dirname,"public")));
 app.get('/',(req,res)=>{
 fs.readdir(`./files`, function(err,files){
     res.render('index',{files:files})
-})    
+});    
+
+app.get('/files/:filename', (req, res)=>{
+    fs.readFile(`./files/${req.params.filename}`,'utf8',(err,filedata)=>{
+        res.render('show' , {filename:req.params.filename,filedata:filedata});
+       })
+})
+
 });
+app.get('/edit', (req,res)=>{
+    res.render('edit')
+})
 app.post('/create',(req,res)=>{
-    console.log(req.body);
+   
 fs.writeFile(`./files/${req.body.title.split(' ').join('')}.txt` , req.body.details, function(err){
 res.redirect('/')
 }) ;
