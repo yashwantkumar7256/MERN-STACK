@@ -24,28 +24,28 @@ app.get('/',(req,res)=>{
     res.render('index');
 })
 
-app.post('/create', (req,res)=>{
+app.post('/create', async (req,res)=>{
    const{username, email,password,age}=req.body;
 
-   bcrypt.genSalt(10,(err,salt)=>{
+ //  bcrypt.genSalt(10,(err,salt)=>{
 
-    bcrypt.hash(password,salt,async (err,hash)=>{
+   // bcrypt.hash(password,salt,async (err,hash)=>{
        let createdUser = await userModel.create({
            username,
           email,
-          password:hash,
+          password,
          age,
          });
-         let token= jwt.sign({email}, 'shhh');
-          res.cookie('token',token)
+       //  let token= jwt.sign({email}, 'shhh');
+        //  res.cookie('token',token)
         
  
-         res.send(createdUser)
+         res.send("you registed succ...fully");
    })
 
-    })
+  //  })
   
-})
+//})
 
 app.get('/logout', (req,res)=>{
     res.cookie('token', "")
@@ -58,8 +58,24 @@ app.post("/login", async (req, res) => {
 
  let user = await userModel.findOne({ email: req.body.email });
  if(!user) return res.send('something went wrong');
+ 
+ bcrypt.compare(req.body.password, user.password ,(err,result)=>{
+    if(result){
 
-  
+      
+           let token= jwt.sign({email:user.email}, 'shhh');
+          res.cookie('token',token)
+            res.send(" you are loged in ")
+        
+    } 
+        else res.send('something went wrong');
+
+ });
+
+
+
+
+   
 });
 
 app.listen(3000,()=>{
