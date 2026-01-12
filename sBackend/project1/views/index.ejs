@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <title>landing page</title>
+</head>
+<body>
+   
+    
+   <div class="bg-zinc-900 h-screen text-white p-10  ">
+    <a href="/login"> go to login </a>
+     <div class="mx-30"> Ragister your account</div>
+   <form class="flex flex-col" action="/create" method="post">
+
+    <input class="bg-zinc-500 mt-10 m-2 outline-none rounded-md px-5" type="text" name="name" placeholder="enter your name">
+
+    <input class="bg-zinc-500 outline-none m-2 rounded-md px-5" type="email" name="email" placeholder="enter your email">
+
+    <input class="bg-zinc-500 outline-none m-2 rounded-md px-5" type="password" name="password" placeholder="enter your password">
+
+    <input class="bg-zinc-500 outline-none m-2 rounded-md px-5" type="number" name="age" placeholder="enter your age">
+    <div class="flex justify-between">
+   <input class=" bg-green-500 w-30 mx-30 rounded-md my-5" type="submit" value="Register">
+     </div>
+   
+
+   </form>   
+
+   </div>
+    
+</body>
+</html>
