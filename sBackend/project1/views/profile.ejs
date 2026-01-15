@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+            <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profie</title>
+</head>
+<body>
+   <div class="p-10">
+    <div class="flex justify-between">
+   <div class="m-5 " > Hello <%=user.name%></div>
+   <a  class="bg-red-500 px-5 rounded m-5" href="/logout"> logout</a>
+    </div>
+
+   <form action="/post" method="post">
+    <textarea class="bg-zinc-500 resize-none px-5 w-full h-20 rounded-2xl" name="content" placeholder="enter some thing"></textarea>
+    <input class="bg-green-500 rounded-md px-5 m-5" type="submit" value="create post" >
+   </form>
+</div>
+
+<!-- <div class=" bg-blue-300 mx-10 rounded-2xl px-5 m-5">
+    <div class="mb-5">username</div>
+    <div class="bg-blue-300 rounded-2xl px-5" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia repellendus, reiciendis eum voluptatum totam cupiditate autem culpa cumque corrupti earum provident fugit laborum blanditiis voluptates vitae quaerat velit placeat praesentium.
+        <div class="flex gap-5 mt-5">
+            <a class="bg-zinc-500" href="">delete</a>
+            <a class="bg-zinc-500" href="">edit</a>
+        </div> </div>
+</div> -->
+
+<%user.posts.reverse().forEach((post)=>{%>
+    <div class=" bg-blue-300 mx-10 rounded-2xl px-5 m-5">
+    <div class="mb-5"><%=user.name%></div>
+    <div class="bg-blue-300 rounded-2xl px-5" ><%=post.content%>
+        <div class="flex gap-5 mt-5">
+            <a class="bg-zinc-500" href="">delete</a>
+            <a class="bg-zinc-500" href="/edit/<%=post._id%>">edit</a>
+        </div> </div>
+</div>
+<%})%>
+</body>
+</html>
